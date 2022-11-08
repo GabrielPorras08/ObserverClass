@@ -10,6 +10,12 @@ public class Reloj implements Observable{
     private int hours;
     private ArrayList<Observer> clockObservers;
 
+    public Reloj(){
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        clockObservers = new ArrayList<Observer>();
+    }
     public void tick() {
         seconds += 1;
         minutes += seconds / 60;
