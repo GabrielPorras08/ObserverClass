@@ -3,11 +3,18 @@ import subject.Reloj;
 public class main {
     public static void main(String[] args) {
         Reloj r = new Reloj();
-        r.tick();
-        r.tick();
-        r.tick();
-        r.tick();
-        r.tick();
-        r.show();
+        boolean verdadero = true;
+
+        while (true){
+
+            r.tick();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            r.show();
+
+        }
     }
 }
