@@ -2,7 +2,7 @@ package Observer;
 
 import subject.Reloj;
 
-public class Cliente implements Observer{
+public class Cliente implements Observer {
 
     private int numIngresadoMinutos;
     private int numIngresadoSegundos;
@@ -16,5 +16,17 @@ public class Cliente implements Observer{
     @Override
     public void update() {
         System.out.println("Nueva notificacion del reloj");
+    }
+
+    public boolean validarMinutos() {
+
+        while (reloj.getMinutes() > 0) {
+
+            if (reloj.getMinutes() % 10 == numIngresadoMinutos) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
