@@ -47,6 +47,11 @@ public class Reloj implements Observable{
         this.hours = hours;
     }
 
+    public boolean validarMultiplos7(){
+
+        return this.minutes % 7 == 0;
+    }
+
     @Override
     public void attach(Observer o) {
         clockObservers.add(o);

@@ -13,7 +13,6 @@ public class Cliente implements Observer{
         this.numIngresadoSegundos = numIngresadoSegundos;
         this.reloj = reloj;
     }
-
     @Override
     public void update() {
         System.out.println("Nueva notificacion del reloj");
