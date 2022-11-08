@@ -8,7 +8,7 @@ public class Reloj implements Observable{
     private int seconds;
     private int minutes;
     private int hours;
-    private ArrayList<Observer> clockSubscribers;
+    private ArrayList<Observer> clockObservers;
 
     public void tick() {
         seconds += 1;
@@ -49,7 +49,7 @@ public class Reloj implements Observable{
 
     @Override
     public void attach(Observer o) {
-        clockSubscribers.add(o);
+        clockObservers.add(o);
     }
 
     @Override
@@ -59,6 +59,8 @@ public class Reloj implements Observable{
 
     @Override
     public void notifyObserver() {
-
+        for (Observer o: clockObservers) {
+            o.update();
+        }
     }
 }
