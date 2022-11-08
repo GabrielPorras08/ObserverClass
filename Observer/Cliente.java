@@ -13,9 +13,30 @@ public class Cliente implements Observer {
         this.numIngresadoSegundos = numIngresadoSegundos;
         this.reloj = reloj;
     }
+
+    public int getNumIngresadoMinutos() {
+        return numIngresadoMinutos;
+    }
+
+    public void setNumIngresadoMinutos(int numIngresadoMinutos) {
+        this.numIngresadoMinutos = numIngresadoMinutos;
+    }
+
+    public int getNumIngresadoSegundos() {
+        return numIngresadoSegundos;
+    }
+
+    public void setNumIngresadoSegundos(int numIngresadoSegundos) {
+        this.numIngresadoSegundos = numIngresadoSegundos;
+    }
+
     @Override
     public void update() {
         System.out.println("Nueva notificacion del reloj");
+        System.out.println();
+    }
+    public Reloj getReloj(){
+        return this.reloj;
     }
 
     public boolean validarMinutos() {
@@ -28,5 +49,10 @@ public class Cliente implements Observer {
         }
 
         return false;
+    }
+    public boolean validarSegundosIngresados(){
+        int cont = 0;
+        cont++;
+        return cont == this.numIngresadoSegundos;
     }
 }
