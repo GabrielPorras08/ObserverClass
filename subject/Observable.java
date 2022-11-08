@@ -1,7 +1,9 @@
 package subject;
 
+import Observer.Observer;
+
 public interface Observable {
-    void attach(Observable o);
-    void detach(Observable o);
+    void attach(Observer o);
+    void detach(Observer o);
     void notifyObserver();
 }

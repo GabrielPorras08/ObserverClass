@@ -1,9 +1,14 @@
 package subject;
 
+import Observer.Observer;
+
+import java.util.ArrayList;
+
 public class Reloj implements Observable{
     private int seconds;
     private int minutes;
     private int hours;
+    private ArrayList<Observer> clockSubscribers;
 
     public void tick() {
         seconds += 1;
@@ -19,12 +24,12 @@ public class Reloj implements Observable{
     }
 
     @Override
-    public void attach(Observable o) {
-
+    public void attach(Observer o) {
+        clockSubscribers.add(o);
     }
 
     @Override
-    public void detach(Observable o) {
+    public void detach(Observer o) {
 
     }
 
