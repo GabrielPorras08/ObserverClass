@@ -49,7 +49,7 @@ public class Reloj implements Observable{
 
     public boolean validarMultiplos7(){
 
-        return this.minutes % 7 == 0;
+        return this.seconds % 7 == 0;
     }
 
     @Override
