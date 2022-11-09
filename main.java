@@ -1,13 +1,27 @@
 import Observer.Cliente;
 import subject.Reloj;
 
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int minutosIngresados, segundosIngreasados;
+
+        System.out.println("Digite un de minutos que desee para recibir una notifiacion.");
+        minutosIngresados = scanner.nextInt();
+
+        System.out.println("Digite un numero de cada cuantos segundos deseea recibir una notificacion.");
+        segundosIngreasados = scanner.nextInt();
+
 
         Reloj r = new Reloj();
         boolean verdadero = true;
         int cont = 0;
-        Cliente cliente = new Cliente(1,7,r);
+        Cliente cliente = new Cliente(minutosIngresados,segundosIngreasados,r);
+
         while (true){
             r.tick();
             cont++;
@@ -24,7 +38,6 @@ public class main {
                 cliente.update();
                 cont = 0;
             }
-
         }
     }
 }
